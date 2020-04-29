@@ -5,6 +5,7 @@ import 'package:impuls/animations/helloText_Animation.dart';
 import 'package:impuls/animations/profileCard_Animation.dart';
 import 'package:impuls/constants.dart';
 import 'package:impuls/widgets/header.dart';
+import 'package:impuls/widgets/resumen_cards.dart';
 
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
@@ -23,7 +24,7 @@ class _HomeState extends State<Home> {
     var profile = ProfileCardAnimation();
     var welcome = HelloTextAnimation(name: nameUser);
     var actions = ActionsAnimation();
-
+    var resumen = ResumenCards();
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -33,15 +34,13 @@ class _HomeState extends State<Home> {
             ListView(
               children: <Widget>[
                 SizedBox(height: kSpacingUnit * 8),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: kSpacingUnit * 2),
-                  child: profile,
-                ),
+                profile,
                 SizedBox(height: kSpacingUnit * 3),
                 welcome,
                 SizedBox(height: kSpacingUnit),
                 actions,
+                SizedBox(height: kSpacingUnit * 3),
+                resumen,
               ],
             ),
             Positioned(

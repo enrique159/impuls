@@ -50,6 +50,12 @@ final kNameTextStyle = TextStyle(
   fontWeight: FontWeight.w900
 );
 
+final kResumenTextStyle = TextStyle(  
+  fontSize: ScreenUtil().setSp(16),
+  color: Colors.black,
+  fontWeight: FontWeight.w600,
+);
+
 final kBodyTextStyle = TextStyle(
   fontSize: ScreenUtil().setSp(13),
   color: kTextSecondaryColor,
@@ -67,7 +73,19 @@ final kCardActionTextStyle = TextStyle(
   fontWeight: FontWeight.w600
 );
 
+final kCardActionResumenTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(14),
+  color: Colors.black87,
+  fontWeight: FontWeight.w600
+);
+
 final kCardActionSubTextStyle = TextStyle(
   fontSize: ScreenUtil().setSp(11),
   color: Colors.white,
+);
+
+final kPedidosValorTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(28),
+  fontWeight: FontWeight.w600,
+  color: kSplashColor,
 );
