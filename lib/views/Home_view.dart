@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
-import 'package:impuls/animations/Actions_Animation.dart';
+import 'package:impuls/animations/actions_Animation.dart';
 import 'package:impuls/animations/helloText_Animation.dart';
 import 'package:impuls/animations/profileCard_Animation.dart';
 import 'package:impuls/constants.dart';
