@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:impuls/animations/FadeInAnimation.dart';
 import 'package:impuls/constants.dart';
+import 'package:impuls/data/UsuarioData.dart';
 import 'package:impuls/widgets/actions.dart';
 import 'package:impuls/widgets/header.dart';
 import 'package:impuls/widgets/profile_card.dart';
@@ -20,10 +21,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
 
-    var nameUser = "Alexandra";
+    var nameUser = usuarioPrueba.nombre.split(" ");
+    var nombre = nameUser[0];
+    
     var header = Header();
     var profile = FadeInAnimation(child: ProfileCard(), delay: 0.0,);
-    var welcome = FadeInAnimation(child: HelloText(name: nameUser),delay: 0.2);
+    var welcome = FadeInAnimation(child: HelloText(name: nombre),delay: 0.2);
     var actions = FadeInAnimation(child: ActionsButtons(), delay: 0.4);
     var resumen = FadeInAnimation(child: ResumenCards(), delay: 0.6,);
 
