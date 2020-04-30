@@ -68,6 +68,12 @@ final kCaptionTextStyle = TextStyle(
   fontWeight: FontWeight.w600
 );
 
+final kVersionTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(11),
+  color: kTextSecondaryColor,
+);
+
+
 final kCardActionTextStyle = TextStyle(
   fontSize: ScreenUtil().setSp(14),
   color: Colors.white,

@@ -16,7 +16,7 @@ class ResumenCards extends StatelessWidget {
                 left: kSpacingUnit * 0.6, bottom: kSpacingUnit),
             child: Text(
               "Resumen del mes",
-              style: kResumenTextStyle,
+              style: kHelloTextStyle,
               textAlign: TextAlign.left,
             ),
           ),
@@ -142,7 +142,7 @@ class ResumenVentasCard extends StatelessWidget {
                   Text("Ingresos", style: kCardActionTextStyle),
                   Text("Totales", style: kCardActionTextStyle),
                   SizedBox(height: kSpacingUnit * 0.7),
-                  Text("11'248", style: kIngresosValorTextStyle),
+                  Text("13'593", style: kIngresosValorTextStyle),
                 ],
               ),
             ),

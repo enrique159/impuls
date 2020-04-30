@@ -3,7 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:impuls/constants.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key key}) : super(key: key);
+  const Header({Key key, this.keyScaffold}) : super(key: key);
+  final keyScaffold;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class Header extends StatelessWidget {
             colors: [Colors.white, Colors.white10],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            stops: [0.8,1.0]
+            stops: [0.7,1.0]
           ),
         ),
         child: Padding(
@@ -25,7 +26,9 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  keyScaffold.currentState.openDrawer();
+                },
                 customBorder: CircleBorder(),
                 child: Container(
                   height: kSpacingUnit * 4,
@@ -52,9 +55,9 @@ class Header extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    Icons.notifications_none,
-                    size: kSpacingUnit * 2.4,
+                  child: Padding(
+                    padding: const EdgeInsets.all(kSpacingUnit),
+                    child: SvgPicture.asset('assets/notification.svg'),
                   ),
                 ),
               ),
