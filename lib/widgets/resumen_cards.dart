@@ -97,7 +97,14 @@ class ResumenPromedioCard extends StatelessWidget {
                 children: <Widget>[
                   Text("Ventas", style: kCardActionResumenTextStyle),
                   Text("Promedio", style: kCardActionResumenTextStyle),
-                  Text("47", style: kPedidosValorTextStyle,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text("2.6 ", style: kVentasValorTextStyle,),
+                      Text("▲", style: kTriangleUpTextStyle,),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -132,9 +139,10 @@ class ResumenVentasCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
-                  Text("Pedidos", style: kCardActionTextStyle),
-                  Text("Realizados", style: kCardActionTextStyle),
-                  Text("47", style: kPedidosValorTextStyle,),
+                  Text("Ingresos", style: kCardActionTextStyle),
+                  Text("Totales", style: kCardActionTextStyle),
+                  SizedBox(height: kSpacingUnit * 0.7),
+                  Text("11'248", style: kIngresosValorTextStyle),
                 ],
               ),
             ),

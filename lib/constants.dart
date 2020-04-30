@@ -10,6 +10,7 @@ const kTextSecondaryColor = Color(0xFF7E8EAA);
 const kPrimaryColor = Color(0xFFFF2765);
 const kGreenColor = Color(0xFF0ED6C7);
 const kOrangeColor = Color(0xFFFF951A);
+const kYellowColor = Color(0xFFFFE482);
 const kPurpleColor = Color(0xFF5143DB);
 const kBackgroundColor = Color(0xFFF1F5FC);
 const kBlueColor = Color(0xFF16ACE3);
@@ -88,4 +89,21 @@ final kPedidosValorTextStyle = TextStyle(
   fontSize: ScreenUtil().setSp(28),
   fontWeight: FontWeight.w600,
   color: kSplashColor,
+);
+
+final kIngresosValorTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(22),
+  fontWeight: FontWeight.w600,
+  color: kYellowColor,
+);
+
+final kVentasValorTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(28),
+  fontWeight: FontWeight.w600,
+  color: kTextColor,
+);
+
+final kTriangleUpTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(11),
+  color: Colors.green,
 );

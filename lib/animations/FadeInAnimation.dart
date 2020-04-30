@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:impuls/widgets/profile_card.dart';
 
-class ProfileCardAnimation extends StatefulWidget {
-  ProfileCardAnimation({Key key}) : super(key: key);
+class FadeInAnimation extends StatefulWidget {
+  FadeInAnimation({
+    Key key,
+    @required this.child,
+    @required this.delay,
+  }) : super(key: key);
+
+  final Widget child;
+  final double delay;
 
   @override
-  _ProfileCardAnimationState createState() => _ProfileCardAnimationState();
+  _FadeInAnimationState createState() => _FadeInAnimationState();
 }
 
-class _ProfileCardAnimationState extends State<ProfileCardAnimation> with SingleTickerProviderStateMixin{
+class _FadeInAnimationState extends State<FadeInAnimation>
+    with SingleTickerProviderStateMixin {
   Animation animation;
   AnimationController animationController;
 
@@ -22,16 +29,18 @@ class _ProfileCardAnimationState extends State<ProfileCardAnimation> with Single
     animation = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
         parent: animationController,
-        curve: Interval(0.0, 1.0, curve: Curves.fastOutSlowIn),
+        curve: Interval(widget.delay, 1.0, curve: Curves.fastOutSlowIn),
       ),
     );
 
     animationController.forward();
   }
+
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
+      child: widget.child,
       builder: (BuildContext context, Widget child) {
         return FadeTransition(
           opacity: animation,
@@ -41,7 +50,7 @@ class _ProfileCardAnimationState extends State<ProfileCardAnimation> with Single
               50 * (1.0 - animation.value),
               0.0,
             ),
-            child: ProfileCard(),
+            child: widget.child,
           ),
         );
       },
