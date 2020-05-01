@@ -113,3 +113,16 @@ final kTriangleUpTextStyle = TextStyle(
   fontSize: ScreenUtil().setSp(11),
   color: Colors.green,
 );
+
+
+//NOTICIAS TEXT
+final kTituloNoticiaTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(18),
+  color: Colors.white,
+  fontWeight: FontWeight.w600
+);
+
+final kSubTituloNoticiaTextStyle = TextStyle(
+  fontSize: ScreenUtil().setSp(14),
+  color: Colors.white,
+);

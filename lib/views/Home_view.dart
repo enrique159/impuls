@@ -6,6 +6,7 @@ import 'package:impuls/data/UsuarioData.dart';
 import 'package:impuls/widgets/actions.dart';
 import 'package:impuls/widgets/drawer_menu.dart';
 import 'package:impuls/widgets/header.dart';
+import 'package:impuls/widgets/noticias_seccion.dart';
 import 'package:impuls/widgets/profile_card.dart';
 import 'package:impuls/widgets/resumen_cards.dart';
 import 'package:impuls/widgets/welcome_text.dart';
@@ -28,14 +29,12 @@ class _HomeState extends State<Home> {
     var nombre = nameUser[0];
 
     var menudrawer = DrawerMenu();
-    var header = Header(keyScaffold: _scaffoldKey,);
+    var header = Header(keyScaffold: _scaffoldKey);
     var profile = FadeInAnimation(child: ProfileCard(), delay: 0.0);
     var welcome = FadeInAnimation(child: HelloText(name: nombre), delay: 0.15);
     var actions = FadeInAnimation(child: ActionsButtons(), delay: 0.3);
-    var resumen = FadeInAnimation(
-      child: ResumenCards(),
-      delay: 0.45,
-    );
+    var resumen = FadeInAnimation(child: ResumenCards(), delay: 0.45);
+    var noticias = FadeInAnimation(child: NoticiasSeccion(), delay: 0.6);
 
     return Scaffold(
       key: _scaffoldKey,
@@ -55,6 +54,8 @@ class _HomeState extends State<Home> {
                 actions,
                 SizedBox(height: kSpacingUnit * 3),
                 resumen,
+                SizedBox(height: kSpacingUnit * 3),
+                noticias
               ],
             ),
             Positioned(
