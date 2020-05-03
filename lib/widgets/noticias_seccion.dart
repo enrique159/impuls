@@ -33,6 +33,7 @@ class _NoticiasSeccionState extends State<NoticiasSeccion> {
           SizedBox(height: kSpacingUnit),
           Expanded(
             child: ListView.builder(
+              padding: const EdgeInsets.only(right: kSpacingUnit * 2),
               scrollDirection: Axis.horizontal,
               itemCount: noticias.length,
               itemBuilder: (_, index) {
@@ -65,14 +66,6 @@ class NoticiaCardSeccion extends StatelessWidget {
         width: kSpacingUnit * 24,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(kSpacingUnit * 1.6),
-          /* image: DecorationImage(
-            colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.4),
-              BlendMode.darken,
-            ),
-            image: NetworkImage(noticia.imagenURL),
-            fit: BoxFit.cover,
-          ), */
         ),
         child: Stack(
           children: <Widget>[
@@ -92,7 +85,17 @@ class NoticiaCardSeccion extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: kSpacingUnit * 2,
+              child: Container(
+                height: kSpacingUnit * 12,
+                width: kSpacingUnit * 24,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(kSpacingUnit * 1.6),
+                  color: Colors.black38
+                ),
+              ),
+            ),
+            Positioned(
+              top: kSpacingUnit * 1.6,
               left: kSpacingUnit,
               child: Text(
                 fechabien,

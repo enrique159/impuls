@@ -14,52 +14,31 @@ class Header extends StatelessWidget {
         height: kSpacingUnit * 6,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.white, Colors.white10],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.7,1.0]
-          ),
+              colors: [Colors.white, Colors.white10],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.7, 1.0]),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kSpacingUnit * 2),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              InkWell(
-                onTap: () {
-                  keyScaffold.currentState.openDrawer();
-                },
-                customBorder: CircleBorder(),
-                child: Container(
-                  height: kSpacingUnit * 4,
-                  width: kSpacingUnit * 4,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(kSpacingUnit * 1.2),
-                    child: SvgPicture.asset('assets/Menu.svg'),
-                  ),
-                ),
+              RawMaterialButton(
+                onPressed: () => keyScaffold.currentState.openDrawer(),
+                child: SvgPicture.asset('assets/Menu.svg', width: kSpacingUnit * 1.6,),
+                //padding: EdgeInsets.all(kSpacingUnit),
+                shape: CircleBorder(),
               ),
               Text(
                 "impuls",
                 style: kSubheaderTextStyle,
               ),
-              InkWell(
-                onTap: () {},
-                customBorder: CircleBorder(),
-                child: Container(
-                  height: kSpacingUnit * 4,
-                  width: kSpacingUnit * 4,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(kSpacingUnit),
-                    child: SvgPicture.asset('assets/notification.svg'),
-                  ),
-                ),
+              RawMaterialButton(
+                onPressed: () {},
+                child: SvgPicture.asset('assets/notification.svg', width: kSpacingUnit * 2,),
+                //padding: EdgeInsets.all(kSpacingUnit),
+                shape: CircleBorder(),
               ),
             ],
           ),
