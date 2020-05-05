@@ -4,7 +4,7 @@ class FadeInAnimation extends StatefulWidget {
   FadeInAnimation({
     Key key,
     @required this.child,
-    @required this.delay,
+    @required this.delay, 
   }) : super(key: key);
 
   final Widget child;
@@ -15,7 +15,7 @@ class FadeInAnimation extends StatefulWidget {
 }
 
 class _FadeInAnimationState extends State<FadeInAnimation>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   Animation animation;
   AnimationController animationController;
 
@@ -24,7 +24,7 @@ class _FadeInAnimationState extends State<FadeInAnimation>
     // TODO: implement initState
     super.initState();
     animationController =
-        AnimationController(duration: Duration(seconds: 2), vsync: this);
+        AnimationController(duration: Duration(milliseconds: 1600), vsync: this);
 
     animation = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
@@ -37,12 +37,21 @@ class _FadeInAnimationState extends State<FadeInAnimation>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: animationController,
-      child: widget.child,
       builder: (BuildContext context, Widget child) {
         return FadeTransition(
+          opacity: animation,
+          child:widget.child,
+        );
+        /* return FadeTransition(
           opacity: animation,
           child: new Transform(
             transform: new Matrix4.translationValues(
@@ -52,7 +61,7 @@ class _FadeInAnimationState extends State<FadeInAnimation>
             ),
             child: widget.child,
           ),
-        );
+        ); */
       },
     );
   }

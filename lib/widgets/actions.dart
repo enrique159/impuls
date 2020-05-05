@@ -22,7 +22,10 @@ class ActionsButtons extends StatelessWidget {
           width: widthContainer,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            color: kPrimaryColor,
+            image: DecorationImage(
+              image: AssetImage("assets/actions/RealizarPedido.png"),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(
@@ -37,10 +40,10 @@ class ActionsButtons extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    SvgPicture.asset(
+                    /* SvgPicture.asset(
                       'assets/shoes.svg',
                       width: kSpacingUnit * 2.6,
-                    ),
+                    ), */
                   ],
                 ),
                 Container(
@@ -79,7 +82,10 @@ class ActionsButtons extends StatelessWidget {
           width: widthContainer,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            color: kGreenColor,
+            image: DecorationImage(
+              image: AssetImage("assets/actions/BuscarProducto.png"),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(
@@ -94,10 +100,10 @@ class ActionsButtons extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    SvgPicture.asset(
+                    /* SvgPicture.asset(
                       'assets/search.svg',
                       width: kSpacingUnit * 2.2,
-                    ),
+                    ), */
                   ],
                 ),
                 Container(
@@ -136,7 +142,10 @@ class ActionsButtons extends StatelessWidget {
           width: widthContainer,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            color: kPurpleColor,
+            image: DecorationImage(
+              image: AssetImage("assets/actions/MisPedidos.png"),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(
@@ -151,10 +160,10 @@ class ActionsButtons extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    SvgPicture.asset(
+                    /* SvgPicture.asset(
                       'assets/History.svg',
                       width: kSpacingUnit * 2,
-                    ),
+                    ), */
                   ],
                 ),
                 Container(
@@ -195,7 +204,10 @@ class ActionsButtons extends StatelessWidget {
           width: widthContainer,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            color: kOrangeColor,
+            image: DecorationImage(
+              image: AssetImage("assets/actions/MisClientes.png"),
+              fit: BoxFit.cover,
+            ),
           ),
           child: Padding(
             padding: const EdgeInsets.only(
@@ -210,10 +222,10 @@ class ActionsButtons extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    SvgPicture.asset(
+                    /* SvgPicture.asset(
                       'assets/Person.svg',
                       width: kSpacingUnit * 2,
-                    ),
+                    ), */
                   ],
                 ),
                 Container(

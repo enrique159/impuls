@@ -17,7 +17,7 @@ class Header extends StatelessWidget {
               colors: [Colors.white, Colors.white10],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              stops: [0.7, 1.0]),
+              stops: [0.8, 1.0]),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kSpacingUnit * 2),
@@ -26,7 +26,10 @@ class Header extends StatelessWidget {
             children: <Widget>[
               RawMaterialButton(
                 onPressed: () => keyScaffold.currentState.openDrawer(),
-                child: SvgPicture.asset('assets/Menu.svg', width: kSpacingUnit * 1.6,),
+                child: SvgPicture.asset(
+                  'assets/Menu.svg',
+                  width: kSpacingUnit * 1.6,
+                ),
                 //padding: EdgeInsets.all(kSpacingUnit),
                 shape: CircleBorder(),
               ),
@@ -36,7 +39,10 @@ class Header extends StatelessWidget {
               ),
               RawMaterialButton(
                 onPressed: () {},
-                child: SvgPicture.asset('assets/notification.svg', width: kSpacingUnit * 2,),
+                child: SvgPicture.asset(
+                  'assets/notification.svg',
+                  width: kSpacingUnit * 2,
+                ),
                 //padding: EdgeInsets.all(kSpacingUnit),
                 shape: CircleBorder(),
               ),
