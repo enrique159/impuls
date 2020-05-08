@@ -241,7 +241,7 @@ class ActionsButtons extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "Agrega a tus clientes",
+                        "Gestiona tus contactos",
                         style: kCardActionSubTextStyle,
                       ),
                     ],
