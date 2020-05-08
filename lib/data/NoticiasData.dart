@@ -1,5 +1,5 @@
 
-import 'package:impuls/models/Noticias.dart';
+import 'package:impuls/models/models_classes.dart';
 
 final noticia1 = Noticias(
   titulo: "Nueva Temporada",

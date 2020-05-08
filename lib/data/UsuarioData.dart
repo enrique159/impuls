@@ -1,5 +1,4 @@
-
-import 'package:impuls/models/Usuario.dart';
+import 'package:impuls/models/models_classes.dart';
 
 final usuarioPrueba = Usuario(
   nombre: "Alejandra Rosales",

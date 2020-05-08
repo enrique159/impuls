@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:impuls/constants.dart';
 import 'package:impuls/data/NoticiasData.dart';
 import 'package:impuls/data/Utilidades.dart';
-import 'package:impuls/models/Noticias.dart';
+import 'package:impuls/models/models_classes.dart';
 
 class NoticiasSeccion extends StatefulWidget {
   NoticiasSeccion({Key key}) : super(key: key);
