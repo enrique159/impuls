@@ -6,6 +6,7 @@ import 'package:impuls/data/UsuarioData.dart';
 import 'package:impuls/widgets/actions.dart';
 import 'package:impuls/widgets/drawer_menu.dart';
 import 'package:impuls/widgets/event_card.dart';
+import 'package:impuls/widgets/footer_home.dart';
 import 'package:impuls/widgets/header.dart';
 import 'package:impuls/widgets/noticias_seccion.dart';
 import 'package:impuls/widgets/profile_card.dart';
@@ -38,6 +39,7 @@ class _HomeState extends State<Home>{
     var resumen = FadeInAnimation(child: ResumenCards(), delay: 0.45);
     var noticias = FadeInAnimation(child: NoticiasSeccion(), delay: 0.6);
     var evento = FadeInAnimation(child:EventCard(), delay: 0.6);
+    var footer = FooterHome();
 
     return Scaffold(
       key: _scaffoldKey,
@@ -61,7 +63,9 @@ class _HomeState extends State<Home>{
                 noticias,
                 SizedBox(height: kSpacingUnit * 5),
                 evento,
-                SizedBox(height: kSpacingUnit * 3),
+                SizedBox(height: kSpacingUnit * 8),
+                footer,
+                SizedBox(height: kSpacingUnit * 8),
               ],
             ),
             Positioned(

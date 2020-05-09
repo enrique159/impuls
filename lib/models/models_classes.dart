@@ -29,3 +29,17 @@ class Noticias{
     this.enlace
   }); 
 }
+
+class Eventos{
+  String titulo;
+  String subtitulo;
+  String descripcion;
+  String imagenURL;
+
+  Eventos({
+    this.titulo,
+    this.subtitulo,
+    this.descripcion,
+    this.imagenURL
+  });
+}

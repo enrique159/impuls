@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:impuls/constants.dart';
 
-class NewPedidoView extends StatefulWidget {
-  NewPedidoView({Key key}) : super(key: key);
+class MisPedidosView extends StatefulWidget {
+  MisPedidosView({Key key}) : super(key: key);
 
   @override
-  _NewPedidoViewState createState() => _NewPedidoViewState();
+  _MisPedidosViewState createState() => _MisPedidosViewState();
 }
 
-class _NewPedidoViewState extends State<NewPedidoView> {
+class _MisPedidosViewState extends State<MisPedidosView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +21,9 @@ class _NewPedidoViewState extends State<NewPedidoView> {
                     width: MediaQuery.of(context).size.width,
                     child: Hero(
                       transitionOnUserGestures: true,
-                      tag: "RealizarPedido",
+                      tag: "MisPedidos",
                       child: Image.asset(
-                        'assets/actions/RealizarPedido.png',
+                        'assets/actions/MisPedidos.png',
                         fit: BoxFit.cover,
                         alignment: Alignment.topCenter,
                       ),

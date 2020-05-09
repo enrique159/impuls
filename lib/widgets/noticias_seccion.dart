@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_parallax/flutter_parallax.dart';
 import 'package:impuls/constants.dart';
 import 'package:impuls/data/NoticiasData.dart';
 import 'package:impuls/data/Utilidades.dart';
@@ -89,9 +90,8 @@ class NoticiaCardSeccion extends StatelessWidget {
                 height: kSpacingUnit * 12,
                 width: kSpacingUnit * 24,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(kSpacingUnit * 1.6),
-                  color: Colors.black38
-                ),
+                    borderRadius: BorderRadius.circular(kSpacingUnit * 1.6),
+                    color: Colors.black38),
               ),
             ),
             Positioned(

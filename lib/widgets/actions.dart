@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:impuls/constants.dart';
+import 'package:impuls/views/pedidos/BuscarProducto_view.dart';
+import 'package:impuls/views/pedidos/MisClientes_view.dart';
+import 'package:impuls/views/pedidos/MisPedidos_view.dart';
+import 'package:impuls/views/pedidos/NewPedido_view.dart';
 
 class ActionsButtons extends StatelessWidget {
   const ActionsButtons({Key key}) : super(key: key);
@@ -14,118 +18,102 @@ class ActionsButtons extends StatelessWidget {
     var cRealizarPedido = InkWell(
       borderRadius: BorderRadius.circular(kSpacingUnit * 1.8),
       splashColor: kSplashColor,
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => NewPedidoView()),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(kSpacingUnit * 0.5),
         child: Container(
           height: heightContainer,
           width: widthContainer,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            image: DecorationImage(
-              image: AssetImage("assets/actions/RealizarPedido.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              top: kSpacingUnit * 1.3,
-              right: kSpacingUnit * 1.3,
-              bottom: kSpacingUnit,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
+                  child: Hero(
+                    transitionOnUserGestures: true,
+                    tag: "RealizarPedido",
+                    child: Image.asset('assets/actions/RealizarPedido.png'),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: kSpacingUnit,
+                left: kSpacingUnit * 1.3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    /* SvgPicture.asset(
-                      'assets/shoes.svg',
-                      width: kSpacingUnit * 2.6,
-                    ), */
+                    Text(
+                      "Realizar Pedido",
+                      style: kCardActionTextStyle,
+                    ),
+                    Text(
+                      "Selecciona del catálago",
+                      style: kCardActionSubTextStyle,
+                    ),
                   ],
                 ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        width: widthContainer * 0.76,
-                        child: Text(
-                          "Realizar Pedido",
-                          style: kCardActionTextStyle,
-                        ),
-                      ),
-                      Text(
-                        "Selecciona del catálago",
-                        style: kCardActionSubTextStyle,
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
     );
 
+    // -------------------------------------------------------------------
+    // --------------------------------------------------------------------
+    // BUSCAR PRODUCTO
+    // -------------------------------------------------------------------
+    // -------------------------------------------------------------------
+
     var cBuscarProducto = InkWell(
       borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.8),
       splashColor: kSplashColor,
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => BuscarProductoView()),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(kSpacingUnit * 0.5),
         child: Container(
           height: heightContainer,
           width: widthContainer,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            image: DecorationImage(
-              image: AssetImage("assets/actions/BuscarProducto.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              top: kSpacingUnit * 1.3,
-              right: kSpacingUnit * 1.3,
-              bottom: kSpacingUnit,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
+                  child: Hero(
+                    transitionOnUserGestures: true,
+                    tag: "BuscarProducto",
+                    child: Image.asset('assets/actions/BuscarProducto.png'),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: kSpacingUnit,
+                left: kSpacingUnit * 1.3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    /* SvgPicture.asset(
-                      'assets/search.svg',
-                      width: kSpacingUnit * 2.2,
-                    ), */
+                    Text(
+                      "Buscar Producto",
+                      style: kCardActionTextStyle,
+                    ),
+                    Text(
+                      "Encuentra esos pares",
+                      style: kCardActionSubTextStyle,
+                    ),
                   ],
                 ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        width: widthContainer * 0.76,
-                        child: Text(
-                          "Buscar Producto",
-                          style: kCardActionTextStyle,
-                        ),
-                      ),
-                      Text(
-                        "Encuentra esos pares",
-                        style: kCardActionSubTextStyle,
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -134,60 +122,47 @@ class ActionsButtons extends StatelessWidget {
     var cMisPedidos = InkWell(
       borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.8),
       splashColor: kSplashColor,
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MisPedidosView()),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(kSpacingUnit * 0.5),
         child: Container(
           height: heightContainer,
           width: widthContainer,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            image: DecorationImage(
-              image: AssetImage("assets/actions/MisPedidos.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              top: kSpacingUnit * 1.3,
-              right: kSpacingUnit * 1.3,
-              bottom: kSpacingUnit,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
+                  child: Hero(
+                    transitionOnUserGestures: true,
+                    tag: "MisPedidos",
+                    child: Image.asset('assets/actions/MisPedidos.png'),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: kSpacingUnit,
+                left: kSpacingUnit * 1.3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    /* SvgPicture.asset(
-                      'assets/History.svg',
-                      width: kSpacingUnit * 2,
-                    ), */
+                    Text(
+                      "Mis Pedidos",
+                      style: kCardActionTextStyle,
+                    ),
+                    Text(
+                      "Historial y consultas",
+                      style: kCardActionSubTextStyle,
+                    ),
                   ],
                 ),
-                Container(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        width: widthContainer * 0.76,
-                        child: Text(
-                          "Mis Pedidos",
-                          style: kCardActionTextStyle,
-                        ),
-                      ),
-                      Text(
-                        "Historial y consultas",
-                        style: kCardActionSubTextStyle,
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -196,59 +171,47 @@ class ActionsButtons extends StatelessWidget {
     var cMisClientes = InkWell(
       borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.8),
       splashColor: kSplashColor,
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MisClientesView()),
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(kSpacingUnit * 0.5),
         child: Container(
           height: heightContainer,
           width: widthContainer,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
-            image: DecorationImage(
-              image: AssetImage("assets/actions/MisClientes.png"),
-              fit: BoxFit.cover,
-            ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              top: kSpacingUnit * 1.3,
-              right: kSpacingUnit * 1.3,
-              bottom: kSpacingUnit,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(kSpacingUnit.w * 1.4),
+                  child: Hero(
+                    transitionOnUserGestures: true,
+                    tag: "MisClientes",
+                    child: Image.asset('assets/actions/MisClientes.png'),
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: kSpacingUnit,
+                left: kSpacingUnit * 1.3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    /* SvgPicture.asset(
-                      'assets/Person.svg',
-                      width: kSpacingUnit * 2,
-                    ), */
+                    Text(
+                      "Mis Clientes",
+                      style: kCardActionTextStyle,
+                    ),
+                    Text(
+                      "Gestiona tus contactos",
+                      style: kCardActionSubTextStyle,
+                    ),
                   ],
                 ),
-                Container(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(
-                        width: widthContainer * 0.76,
-                        child: Text(
-                          "Mis Clientes",
-                          style: kCardActionTextStyle,
-                        ),
-                      ),
-                      Text(
-                        "Gestiona tus contactos",
-                        style: kCardActionSubTextStyle,
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
