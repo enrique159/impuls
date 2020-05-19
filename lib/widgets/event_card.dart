@@ -32,13 +32,25 @@ class _EventCardState extends State<EventCard> {
             ),
             Positioned(
               left: kSpacingUnit * 2,
-              bottom: kSpacingUnit * 4,
+              bottom: kSpacingUnit * 2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Evento", style: kResumenTextStyle,),
+                  Text(
+                    "Evento",
+                    style: kResumenTextStyle,
+                  ),
                   Text(eventoPrueba.titulo, style: kHeadingTextStyle),
                   Text(eventoPrueba.subtitulo, style: kTitleTextStyle),
+                  RaisedButton(
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                        side: BorderSide(color: Colors.black, width: 2.0),),
+                    onPressed: () {},
+                    color: Colors.transparent,
+                    child: Text("Ver más", style: TextStyle(fontWeight: FontWeight.w600),),
+                  ),
                 ],
               ),
             )
