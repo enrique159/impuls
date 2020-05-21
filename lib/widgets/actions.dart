@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:impuls/constants.dart';
 import 'package:impuls/views/pedidos/BuscarProducto_view.dart';
 import 'package:impuls/views/pedidos/MisClientes_view.dart';
 import 'package:impuls/views/pedidos/MisPedidos_view.dart';
 import 'package:impuls/views/pedidos/NewPedido_view.dart';
 
-class ActionsButtons extends StatelessWidget {
+class ActionsButtons extends StatefulWidget {
   const ActionsButtons({Key key}) : super(key: key);
 
   @override
+  _ActionsButtonsState createState() => _ActionsButtonsState();
+}
+
+class _ActionsButtonsState extends State<ActionsButtons> with AutomaticKeepAliveClientMixin{
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+  
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     var widthContainer = MediaQuery.of(context).size.width / 2.36;
     var heightContainer = 110.0;
 
@@ -246,4 +256,5 @@ class ActionsButtons extends StatelessWidget {
       ),
     );
   }
+
 }

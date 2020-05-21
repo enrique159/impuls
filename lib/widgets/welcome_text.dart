@@ -9,10 +9,15 @@ class HelloText extends StatefulWidget {
   _HelloTextState createState() => _HelloTextState();
 }
 
-class _HelloTextState extends State<HelloText> {
+class _HelloTextState extends State<HelloText> with AutomaticKeepAliveClientMixin{
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kSpacingUnit * 2),
       child: Row(

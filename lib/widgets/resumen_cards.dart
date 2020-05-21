@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:impuls/constants.dart';
 
-class ResumenCards extends StatelessWidget {
+class ResumenCards extends StatefulWidget {
   const ResumenCards({Key key}) : super(key: key);
 
   @override
+  _ResumenCardsState createState() => _ResumenCardsState();
+}
+
+class _ResumenCardsState extends State<ResumenCards> with AutomaticKeepAliveClientMixin{
+  
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kSpacingUnit * 1.4),
       child: Column(
@@ -32,6 +43,7 @@ class ResumenCards extends StatelessWidget {
       ),
     );
   }
+
 }
 
 class ResumenPedidosCard extends StatelessWidget {

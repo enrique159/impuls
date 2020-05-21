@@ -10,9 +10,15 @@ class EventCard extends StatefulWidget {
   _EventCardState createState() => _EventCardState();
 }
 
-class _EventCardState extends State<EventCard> {
+class _EventCardState extends State<EventCard> with AutomaticKeepAliveClientMixin {
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kSpacingUnit * 2),
       child: ClipRRect(
@@ -42,8 +48,7 @@ class _EventCardState extends State<EventCard> {
                   ),
                   Text(eventoPrueba.titulo, style: kHeadingTextStyle),
                   Text(eventoPrueba.subtitulo, style: kTitleTextStyle),
-                  RaisedButton(
-                    elevation: 0,
+                  FlatButton(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: BorderSide(color: Colors.black, width: 2.0),),

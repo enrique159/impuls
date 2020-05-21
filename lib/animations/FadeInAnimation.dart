@@ -47,11 +47,11 @@ class _FadeInAnimationState extends State<FadeInAnimation>
     return AnimatedBuilder(
       animation: animationController,
       builder: (BuildContext context, Widget child) {
-        return FadeTransition(
+        /* return FadeTransition(
           opacity: animation,
           child:widget.child,
-        );
-        /* return FadeTransition(
+        ); */
+        return FadeTransition(
           opacity: animation,
           child: new Transform(
             transform: new Matrix4.translationValues(
@@ -61,7 +61,7 @@ class _FadeInAnimationState extends State<FadeInAnimation>
             ),
             child: widget.child,
           ),
-        ); */
+        );
       },
     );
   }

@@ -12,11 +12,16 @@ class NoticiasSeccion extends StatefulWidget {
   _NoticiasSeccionState createState() => _NoticiasSeccionState();
 }
 
-class _NoticiasSeccionState extends State<NoticiasSeccion> {
+class _NoticiasSeccionState extends State<NoticiasSeccion> with AutomaticKeepAliveClientMixin{
   List<Noticias> noticias = [noticia1, noticia2, noticia3];
 
   @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
+
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return SizedBox(
       height: kSpacingUnit * 16,
       child: Column(

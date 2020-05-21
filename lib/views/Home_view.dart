@@ -23,7 +23,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home>{
   @override
   Widget build(BuildContext context) {
-
     ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();
@@ -50,6 +49,8 @@ class _HomeState extends State<Home>{
         child: Stack(
           children: <Widget>[
             ListView(
+              cacheExtent: 20,
+              addAutomaticKeepAlives: true,
               children: <Widget>[
                 SizedBox(height: kSpacingUnit * 8),
                 profile,
@@ -77,4 +78,6 @@ class _HomeState extends State<Home>{
       ),
     );
   }
+
+  
 }
