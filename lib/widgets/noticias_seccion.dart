@@ -54,7 +54,7 @@ class _NoticiasSeccionState extends State<NoticiasSeccion> with AutomaticKeepAli
 }
 
 class NoticiaCardSeccion extends StatelessWidget {
-  const NoticiaCardSeccion({Key key, @required this.noticia}) : super(key: key);
+  const NoticiaCardSeccion({Key key, this.noticia}) : super(key: key);
   final Noticias noticia;
 
   @override

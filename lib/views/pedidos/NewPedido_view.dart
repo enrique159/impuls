@@ -12,6 +12,7 @@ class _NewPedidoViewState extends State<NewPedidoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
           Container(

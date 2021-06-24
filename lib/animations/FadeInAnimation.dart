@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class FadeInAnimation extends StatefulWidget {
   FadeInAnimation({
     Key key,
-    @required this.child,
-    @required this.delay, 
+    this.child,
+    this.delay, 
   }) : super(key: key);
 
   final Widget child;
@@ -23,12 +23,10 @@ class _FadeInAnimationState extends State<FadeInAnimation>
   void initState() {
     // TODO: implement initState
     super.initState();
-    animationController =
-        AnimationController(duration: Duration(milliseconds: 1600), vsync: this);
 
     animation = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
-        parent: animationController,
+        parent: animation,
         curve: Interval(widget.delay, 1.0, curve: Curves.fastOutSlowIn),
       ),
     );
@@ -47,10 +45,6 @@ class _FadeInAnimationState extends State<FadeInAnimation>
     return AnimatedBuilder(
       animation: animationController,
       builder: (BuildContext context, Widget child) {
-        /* return FadeTransition(
-          opacity: animation,
-          child:widget.child,
-        ); */
         return FadeTransition(
           opacity: animation,
           child: new Transform(

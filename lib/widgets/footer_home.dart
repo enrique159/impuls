@@ -30,6 +30,20 @@ class FooterHome extends StatelessWidget {
                     ),
                   ),
                 ),
+                FlatButton(
+                  shape: CircleBorder(
+                    side: BorderSide(color: Colors.black, width: 2.0),
+                  ),
+                  onPressed: () {},
+                  color: Colors.transparent,
+                  child: Padding(
+                    padding: const EdgeInsets.all(kSpacingUnit),
+                    child: SvgPicture.asset(
+                      'assets/mail.svg',
+                      width: kSpacingUnit * 1.6,
+                    ),
+                  ),
+                ),
               ],
             ),
           ],

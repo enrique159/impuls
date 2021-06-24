@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/screenutil.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:impuls/animations/FadeInAnimation.dart';
 import 'package:impuls/constants.dart';
 import 'package:impuls/data/UsuarioData.dart';
@@ -23,7 +23,11 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home>{
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 375, height: 812, allowFontScaling: true);
+    ScreenUtil.init(
+      BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+      designSize: Size(375, 812));
     final GlobalKey<ScaffoldState> _scaffoldKey =
         new GlobalKey<ScaffoldState>();
 
