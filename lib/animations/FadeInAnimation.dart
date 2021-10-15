@@ -4,7 +4,7 @@ class FadeInAnimation extends StatefulWidget {
   FadeInAnimation({
     Key key,
     this.child,
-    this.delay, 
+    this.delay,
   }) : super(key: key);
 
   final Widget child;
@@ -23,10 +23,12 @@ class _FadeInAnimationState extends State<FadeInAnimation>
   void initState() {
     // TODO: implement initState
     super.initState();
+    animationController = AnimationController(
+        duration: Duration(milliseconds: 1600), vsync: this);
 
     animation = Tween(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(
-        parent: animation,
+        parent: animationController,
         curve: Interval(widget.delay, 1.0, curve: Curves.fastOutSlowIn),
       ),
     );

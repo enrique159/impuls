@@ -19,7 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_svg: ^0.17.4
+  flutter_svg: ^0.19.3
   flutter_screenutil: ^5.0.0+2
   flutter_launcher_icons: "^0.7.3"
   flutter_parallax: "^0.1.2"
